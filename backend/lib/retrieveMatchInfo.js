@@ -33,10 +33,10 @@ async function getParticipantID(match, accountId) {
 async function getMatchOutcome(match, id) {
   const matchApi = `${api}/lol/match/v4/matches/${match.gameId}?api_key=${key}`;
   const res = await axios.get(encodeURI(matchApi));
-  let outcome = false;
+  let outcome = 'N/A';
   res.data.participants.forEach( stats => {
     if (stats.participantId === id) {
-      outcome = stats.win;
+      outcome = stats.stats.win;
     }
   });
   return outcome;
