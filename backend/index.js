@@ -1,13 +1,34 @@
- import { getSummonerID, getMatches, getParticipantID, getMatchOutcome } from './lib/retrieveMatchInfo';
+import express from 'express';
+import { initDB } from './lib/db';
+import cors from 'cors';
+import { getSummonerID, getMatches, getParticipantID, getMatchOutcome } from './lib/retrieveMatchInfo';
 
- async function go() {
+
+const app = express();
+app.use(cors());
+const PORT = 3333;
+
+initDB().then(console.log('Initializing database...'));
+
+app.get('/winrate', async (req, res, next) => {
+  console.log('Fetching winrate...');
+  await go(res);
+});
+
+app.listen(PORT, () =>{
+  console.log(`Running on port ${PORT}.`);
+})
+
+async function go(res) {
+
   const name = 'ńdo';
   const totalGames = 10;
   let wins = 0;
   let counter = 0;
   let id = 'N/A';
+  let winrate = -1;
 
-  await getSummonerID(name)
+  getSummonerID(name)
   .then( (summonerID) => {
     id = summonerID;
     return getMatches(id);
@@ -28,14 +49,35 @@
     })
     .then( () => { 
       if (counter === totalGames) {
-        console.log(`${name}'s winrate over the past ${totalGames} games is: ${(wins/totalGames)*100}%`);
+        winrate = (wins/totalGames)*100;
+        show(name, totalGames, winrate, res);
       }
     })
     )
 
   })
-  .catch(err => console.log('Summoner not found'));
+  .catch(err => {
+    console.log('Summoner not found')
+    show('Not found', '', '', res)
+  });
   
  }
 
- go();
+ async function show(name, totalGames, winrate, res) {
+  
+  let data = {
+    summonerName: name,
+    totalGames: totalGames,
+    winrate: winrate
+  };
+
+  await initDB().then( db => {
+    db.set('summonerData', data)
+    .write().then( () =>
+    console.log('Written to the database!'));
+  })
+  .catch(err => console.log(err));;
+
+  res.json({data});
+   
+ }
