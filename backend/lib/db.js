@@ -4,7 +4,7 @@ import FileSync from 'lowdb/adapters/FileAsync';
 const adapter = new FileSync('db.json');
 
 export async function initDB() {
-  const db = await low(adapter);
+  const db = await low(adapter).catch(err => console.log(err));;
   db.defaults(
     {
       summonerData: []

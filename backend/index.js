@@ -8,11 +8,13 @@ const app = express();
 app.use(cors());
 const PORT = 3333;
 
-initDB().then(console.log('Initializing database...'));
+initDB()
+.then(console.log('Initializing database...'))
+.catch(err => console.log(err));
 
 app.get('/winrate', async (req, res, next) => {
   console.log('Fetching winrate...');
-  await go(res);
+  await go(res).catch(err => console.log(err));;
 });
 
 app.listen(PORT, () =>{
@@ -57,7 +59,7 @@ async function go(res) {
 
   })
   .catch(err => {
-    console.log('Summoner not found')
+    console.log(`Summoner not found: ${err}`)
     show('Not found', '', '', res)
   });
   
