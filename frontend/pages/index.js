@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import Results from '../components/Results';
-import Winrate from '../components/Winrate';
 
 export default class Landing extends Component {
 
@@ -12,7 +11,6 @@ export default class Landing extends Component {
   handleChange(event) {
     this.setState({name: event.target.value});
   }
-
   
   handleSubmit(event) {
     event.preventDefault();
@@ -27,26 +25,30 @@ export default class Landing extends Component {
       return (
         <React.Fragment>
 
-        <h1>What's my winrate?</h1>
+          <div>
 
-        <form name='form' onSubmit={this.handleSubmit}>
-          <input 
-          id='userinput' 
-          type="text" 
-          placeholder="imaqtpie" 
-          onChange={this.handleChange}
-          />
-          <button type='submit' value='submit'>Submit</button>
-        </form>
+            <h1>What's my winrate?</h1>
+            <form name='form' onSubmit={this.handleSubmit}>
+              <input 
+              id='userinput' 
+              type="text" 
+              placeholder="imaqtpie" 
+              onChange={this.handleChange}
+              />
+              <button type='submit' value='submit'>Submit</button>
+            </form>
+            
+          </div>
 
-        {
-          this.state.isSubmitted && 
-          <Results>
-            <Winrate inputName={this.state.name} />
-          </Results>
-        }
-        
-      </React.Fragment>  
+          {
+            this.state.isSubmitted && 
+            <React.Fragment>
+              <button type='button' onClick={ () => {this.setState({isSubmitted: false})}}>Back</button>
+              <Results inputName={this.state.name} />
+            </React.Fragment>
+            
+          }
+        </React.Fragment>  
       );
   }
 };

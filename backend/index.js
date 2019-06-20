@@ -14,16 +14,16 @@ initDB()
 
 app.get('/winrate', async (req, res, next) => {
   console.log('Fetching winrate...');
-  await go(res).catch(err => console.log(err));;
+  await go(res, req.query.summonerName).catch(err => console.log(err));;
 });
 
 app.listen(PORT, () =>{
   console.log(`Running on port ${PORT}.`);
 })
 
-async function go(res) {
+async function go(res, summonerName) {
 
-  const name = 'ńdo';
+  const name = summonerName;
   const totalGames = 10;
   let wins = 0;
   let counter = 0;
