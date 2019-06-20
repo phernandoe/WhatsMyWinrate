@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Results from '../components/Results';
+import '../css/style.css';
 
 export default class Landing extends Component {
 
@@ -25,17 +26,19 @@ export default class Landing extends Component {
       return (
         <React.Fragment>
 
-          <div>
+          <h1 className='header'>What's my LoL winrate?</h1>
 
-            <h1>What's my winrate?</h1>
-            <form name='form' onSubmit={this.handleSubmit}>
-              <input 
+          <div className='form-container'>
+            
+            <form className='form' name='form' onSubmit={this.handleSubmit}>
+              <span className='form-line'><input 
               id='userinput' 
               type="text" 
-              placeholder="imaqtpie" 
+              placeholder="imaqtpie"
               onChange={this.handleChange}
               />
-              <button type='submit' value='submit'>Submit</button>
+              </span>
+              <button className='submit' type='submit' value='submit'>Submit</button>
             </form>
             
           </div>
