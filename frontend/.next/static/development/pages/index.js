@@ -28,7 +28,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "/Users/Fernando/Documents/Dev/React/RiotAPI/frontend/components/Results.js";
+var _jsxFileName = "/Users/Fernando/Documents/Dev/React/WhatsMyWinrate/frontend/components/Results.js";
 
 
 
@@ -4374,10 +4374,10 @@ for (var i = 0; i < DOMIterables.length; i++) {
 
 /***/ }),
 
-/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2FFernando%2FDocuments%2FDev%2FReact%2FRiotAPI%2Ffrontend%2Fpages%2Findex.js!./":
-/*!**************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2FFernando%2FDocuments%2FDev%2FReact%2FRiotAPI%2Ffrontend%2Fpages%2Findex.js ***!
-  \**************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2FFernando%2FDocuments%2FDev%2FReact%2FWhatsMyWinrate%2Ffrontend%2Fpages%2Findex.js!./":
+/*!*********************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2FFernando%2FDocuments%2FDev%2FReact%2FWhatsMyWinrate%2Ffrontend%2Fpages%2Findex.js ***!
+  \*********************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9522,7 +9522,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "/Users/Fernando/Documents/Dev/React/RiotAPI/frontend/pages/index.js";
+var _jsxFileName = "/Users/Fernando/Documents/Dev/React/WhatsMyWinrate/frontend/pages/index.js";
 
 
 
@@ -9674,13 +9674,13 @@ function (_Component) {
 /***/ }),
 
 /***/ 0:
-/*!******************************************************************************************************************************************************!*\
-  !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2FFernando%2FDocuments%2FDev%2FReact%2FRiotAPI%2Ffrontend%2Fpages%2Findex.js ***!
-  \******************************************************************************************************************************************************/
+/*!*************************************************************************************************************************************************************!*\
+  !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2FFernando%2FDocuments%2FDev%2FReact%2FWhatsMyWinrate%2Ffrontend%2Fpages%2Findex.js ***!
+  \*************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2FFernando%2FDocuments%2FDev%2FReact%2FRiotAPI%2Ffrontend%2Fpages%2Findex.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2FFernando%2FDocuments%2FDev%2FReact%2FRiotAPI%2Ffrontend%2Fpages%2Findex.js!./");
+module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2FFernando%2FDocuments%2FDev%2FReact%2FWhatsMyWinrate%2Ffrontend%2Fpages%2Findex.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2FFernando%2FDocuments%2FDev%2FReact%2FWhatsMyWinrate%2Ffrontend%2Fpages%2Findex.js!./");
 
 
 /***/ }),

@@ -121,7 +121,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "/Users/Fernando/Documents/Dev/React/RiotAPI/frontend/components/Results.js";
+var _jsxFileName = "/Users/Fernando/Documents/Dev/React/WhatsMyWinrate/frontend/components/Results.js";
 
 
 
@@ -570,7 +570,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "/Users/Fernando/Documents/Dev/React/RiotAPI/frontend/pages/index.js";
+var _jsxFileName = "/Users/Fernando/Documents/Dev/React/WhatsMyWinrate/frontend/pages/index.js";
 
 
 
@@ -728,7 +728,7 @@ function (_Component) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/Fernando/Documents/Dev/React/RiotAPI/frontend/pages/index.js */"./pages/index.js");
+module.exports = __webpack_require__(/*! /Users/Fernando/Documents/Dev/React/WhatsMyWinrate/frontend/pages/index.js */"./pages/index.js");
 
 
 /***/ }),
