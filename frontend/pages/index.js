@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import ReactSVG from 'react-svg';
 import Results from '../components/Results';
 import '../css/style.css';
 
@@ -28,7 +29,9 @@ export default class Landing extends Component {
 
           <h1 className='header'>What's my LoL winrate?</h1>
 
-          <div className='form-container'>
+          
+
+          <div className='form-container' style={this.state.isSubmitted ? {display: 'none'} : {}}>
             
             <form className='form' name='form' onSubmit={this.handleSubmit}>
               <span className='form-line'><input 

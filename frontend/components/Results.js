@@ -15,51 +15,19 @@ export default class Results extends Component {
       this.setState({
         summonerName: res.data.data.summonerName,
         totalGames: res.data.data.totalGames,
-        winrate: res.data.data.winrate,
+        winrate: res.data.data.summonerName === 'Not Found' ? 'N/A' : `${res.data.data.winrate}%`
       });
     })
     .catch(err => console.log(err));
   };
 
   render(){return (
-    <React.Fragment>
-      <ul>
-        <li>{this.state.summonerName}</li>
-        <li>{this.state.totalGames}</li>
-        <li>{this.state.winrate}</li>
-        
-      </ul>
-    </React.Fragment>
+    <section className='results'>
+      <h2 className='results-summonerName'>{this.state.summonerName}</h2>
+      <div className='results-winrate-container'>
+        <h1 className='results-winrate'>{this.state.winrate}</h1>
+        <p className='results-fineprint'>~ Winrate for the last 10 games ~</p>
+      </div>
+    </section>
   )};
 }
-
-
-//Hook for getting the data!
-// function useWinrate() {
-//   const [winrate, setWinrate] = useState({});
-//   useEffect(function() {
-//     (async () => {
-//       // const res = await axios.get('http://localhost:3333/winrate').catch(err => console.log(err));;
-//       // const sData = res.data.data;
-//       const sData = {
-//         summonerData: {
-//           summonerName: 'test',
-//           totalGames: 10,
-//           winrate: 40
-//         }
-//       };
-//       setWinrate(sData.summonerData);
-//     })();
-//   }, []);
-//   return winrate;
-// }
-
-// export default function Results({ children }) {
-//   const summonerData = useWinrate();
-
-//   return (
-//     <SummonerProvider value={{ summonerData }}>
-//       <div className='landing'>{children}</div>
-//     </SummonerProvider>
-//   );
-// }

@@ -166,7 +166,7 @@ function (_Component) {
         _this2.setState({
           summonerName: res.data.data.summonerName,
           totalGames: res.data.data.totalGames,
-          winrate: res.data.data.winrate
+          winrate: res.data.data.summonerName === 'Not Found' ? 'N/A' : "".concat(res.data.data.winrate, "%")
         });
       }).catch(function (err) {
         return console.log(err);
@@ -175,69 +175,47 @@ function (_Component) {
   }, {
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_8___default.a.Fragment, {
+      return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("section", {
+        className: "results",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 25
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("ul", {
+      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("h2", {
+        className: "results-summonerName",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 26
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("li", {
+      }, this.state.summonerName), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
+        className: "results-winrate-container",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 27
         },
         __self: this
-      }, this.state.summonerName), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("li", {
+      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("h1", {
+        className: "results-winrate",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 28
         },
         __self: this
-      }, this.state.totalGames), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("li", {
+      }, this.state.winrate), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("p", {
+        className: "results-fineprint",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 29
         },
         __self: this
-      }, this.state.winrate)));
+      }, "~ Winrate for the last 10 games ~")));
     }
   }]);
 
   return Results;
-}(react__WEBPACK_IMPORTED_MODULE_8__["Component"]); //Hook for getting the data!
-// function useWinrate() {
-//   const [winrate, setWinrate] = useState({});
-//   useEffect(function() {
-//     (async () => {
-//       // const res = await axios.get('http://localhost:3333/winrate').catch(err => console.log(err));;
-//       // const sData = res.data.data;
-//       const sData = {
-//         summonerData: {
-//           summonerName: 'test',
-//           totalGames: 10,
-//           winrate: 40
-//         }
-//       };
-//       setWinrate(sData.summonerData);
-//     })();
-//   }, []);
-//   return winrate;
-// }
-// export default function Results({ children }) {
-//   const summonerData = useWinrate();
-//   return (
-//     <SummonerProvider value={{ summonerData }}>
-//       <div className='landing'>{children}</div>
-//     </SummonerProvider>
-//   );
-// }
-
+}(react__WEBPACK_IMPORTED_MODULE_8__["Component"]);
 
 
 
@@ -580,9 +558,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var _components_Results__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/Results */ "./components/Results.js");
-/* harmony import */ var _css_style_css__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../css/style.css */ "./css/style.css");
-/* harmony import */ var _css_style_css__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_css_style_css__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var react_svg__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-svg */ "react-svg");
+/* harmony import */ var react_svg__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(react_svg__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _components_Results__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/Results */ "./components/Results.js");
+/* harmony import */ var _css_style_css__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../css/style.css */ "./css/style.css");
+/* harmony import */ var _css_style_css__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_css_style_css__WEBPACK_IMPORTED_MODULE_10__);
 
 
 
@@ -591,6 +571,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var _jsxFileName = "/Users/Fernando/Documents/Dev/React/RiotAPI/frontend/pages/index.js";
+
 
 
 
@@ -648,21 +629,24 @@ function (_Component) {
       return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_7___default.a.Fragment, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 27
+          lineNumber: 28
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("h1", {
         className: "header",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 29
+          lineNumber: 30
         },
         __self: this
       }, "What's my LoL winrate?"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "form-container",
+        style: this.state.isSubmitted ? {
+          display: 'none'
+        } : {},
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 31
+          lineNumber: 34
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("form", {
@@ -671,14 +655,14 @@ function (_Component) {
         onSubmit: this.handleSubmit,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 33
+          lineNumber: 36
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("span", {
         className: "form-line",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 34
+          lineNumber: 37
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("input", {
@@ -688,7 +672,7 @@ function (_Component) {
         onChange: this.handleChange,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 34
+          lineNumber: 37
         },
         __self: this
       })), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("button", {
@@ -697,13 +681,13 @@ function (_Component) {
         value: "submit",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 41
+          lineNumber: 44
         },
         __self: this
       }, "Submit"))), this.state.isSubmitted && react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_7___default.a.Fragment, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 48
+          lineNumber: 51
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("button", {
@@ -715,14 +699,14 @@ function (_Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 49
+          lineNumber: 52
         },
         __self: this
-      }, "Back"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_Results__WEBPACK_IMPORTED_MODULE_8__["default"], {
+      }, "Back"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_Results__WEBPACK_IMPORTED_MODULE_9__["default"], {
         inputName: this.state.name,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 50
+          lineNumber: 53
         },
         __self: this
       })));
@@ -834,6 +818,17 @@ module.exports = require("core-js/library/fn/symbol/iterator");
 /***/ (function(module, exports) {
 
 module.exports = require("react");
+
+/***/ }),
+
+/***/ "react-svg":
+/*!****************************!*\
+  !*** external "react-svg" ***!
+  \****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("react-svg");
 
 /***/ })
 

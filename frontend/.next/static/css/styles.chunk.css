@@ -22,7 +22,7 @@ body {
 /* Form styling */
 
 .form-container {
-  height: 100vh;
+  height: 90vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -40,7 +40,7 @@ body {
   color: var(--text-color);
   text-align: center;
   border: none;
-  font-size: 5rem;
+  font-size: 7vw;
 }
 
 #userinput:focus {
@@ -73,7 +73,7 @@ body {
   color: var(--highlight-color);
   border: none;
   padding: 0.1em;
-  font-size: 1.7rem;
+  font-size: 2.5vw;
   align-self: flex-end;
   position: relative;
 }
@@ -97,9 +97,33 @@ body {
 
 /* Header */
 .header {
+  position: absolute;
+  writing-mode: vertical-lr;
+  margin-top: 10px;
+  margin-left: -7px;
+  font-size: 2.7rem;
+}
+
+/* Results */
+.results {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
   text-align: center;
-  font-size: 3rem;
-  left: 0;
+}
+
+.results-summonerName {
+  font-size: 4rem;
+}
+
+.results-winrate {
+  font-size: 5rem;
+}
+
+.results-fineprint {
+  font-size: 1.2rem;
 }
 
 /*# sourceMappingURL=styles.chunk.css.map*/
