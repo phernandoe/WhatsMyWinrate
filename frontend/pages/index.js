@@ -49,7 +49,7 @@ export default class Landing extends Component {
           {
             this.state.isSubmitted && 
             <React.Fragment>
-              <button type='button' onClick={ () => {this.setState({isSubmitted: false})}}>Back</button>
+              <button className='back-button' type='button' onClick={ () => {this.setState({isSubmitted: false})}}>&#8592;</button>
               <Results inputName={this.state.name} />
             </React.Fragment>
             

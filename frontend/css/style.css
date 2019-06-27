@@ -99,9 +99,11 @@ body {
 .header {
   position: absolute;
   writing-mode: vertical-lr;
-  margin-top: 10px;
+  height: 100vh;
+  text-align: center;
   margin-left: -7px;
   font-size: 2.7rem;
+  opacity: 0.1;
 }
 
 /* Results */
@@ -115,7 +117,7 @@ body {
 }
 
 .results-summonerName {
-  font-size: 4rem;
+  font-size: 3rem;
 }
 
 .results-winrate {
@@ -124,5 +126,32 @@ body {
 
 .results-fineprint {
   font-size: 1.2rem;
+}
+
+/* Back button */
+.back-button {
+  position: absolute;
+  background-color: transparent;
+  font-size: 3rem;
+  color: var(--highlight-color);
+  border: none;
+  margin: 10px;
+  cursor: pointer;
+}
+
+/* Cool Hover! */
+.back-button::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background: currentColor;
+  transition: 200ms ease-in;
+}
+
+.back-button:hover::after {
+  transform: scaleX(0.75);
 }
 
