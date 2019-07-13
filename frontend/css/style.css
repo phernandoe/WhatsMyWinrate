@@ -108,7 +108,7 @@ body {
 
 /* Results */
 .results {
-  height: 90vh;
+  height: 50vh;
   display: flex;
   flex-direction: column;
   justify-content: space-around;

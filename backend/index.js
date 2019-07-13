@@ -1,16 +1,10 @@
 import express from 'express';
-import { initDB } from './lib/db';
 import cors from 'cors';
 import { getSummonerID, getMatches, getParticipantID, getMatchOutcome } from './lib/retrieveMatchInfo';
-
 
 const app = express();
 app.use(cors());
 const PORT = 3333;
-
-initDB()
-.then(console.log('Initializing database...'))
-.catch(err => console.log(err));
 
 app.get('/winrate', async (req, res, next) => {
   console.log('Fetching winrate...');
@@ -73,13 +67,7 @@ async function go(res, summonerName) {
     winrate: winrate
   };
 
-  await initDB().then( db => {
-    db.set('summonerData', data)
-    .write().then( () =>
-    console.log('Written to the database!'));
-  })
-  .catch(err => console.log(err));;
-
+  console.log('Information retrieved!');
   res.json({data});
    
  }
