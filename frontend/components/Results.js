@@ -22,12 +22,41 @@ export default class Results extends Component {
   };
 
   render(){return (
-    <section className='results'>
+    <>
       <h2 className='results-summonerName'>{this.state.summonerName}</h2>
-      <div className='results-winrate-container'>
-        <h1 className='results-winrate'>{this.state.winrate}</h1>
-        <p className='results-fineprint'>~ Winrate for the last 10 games ~</p>
-      </div>
-    </section>
+      <section className='results'>
+
+        <div className='results-container'>
+          <h3 className='results-field-title'>Win rate</h3>
+          <h1>{this.state.winrate}</h1>
+        </div>
+
+        <div className='results-container'>
+          <h3 className='results-field-title'>Total Games</h3>
+          <h1>{this.state.totalGames}</h1>
+        </div>
+
+        <div className='results-container'>
+          <h3 className='results-field-title'>Empty field</h3>
+          <h1>Placeholder</h1>
+        </div>
+
+        <div className='results-container'>
+          <h3 className='results-field-title'>Empty field</h3>
+          <h1>Placeholder</h1>
+        </div>
+
+        <div className='results-container'>
+          <h3 className='results-field-title'>Empty field</h3>
+          <h1>Placeholder</h1>
+        </div>
+
+        <div className='results-container'>
+          <h3 className='results-field-title'>Empty field</h3>
+          <h1>Placeholder</h1>
+        </div>
+
+      </section>
+    </>
   )};
 }

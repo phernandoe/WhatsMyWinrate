@@ -1,7 +1,7 @@
 :root {
   --background-color: #130E2F;
   --highlight-color: #00FFC2;
-  --text-color: #FFFFFF;
+  --text-color: #DDDDDD;
   --doc-font: Arial, Helvetica, sans-serif;
 }
 
@@ -108,24 +108,27 @@ body {
 
 /* Results */
 .results {
+  --margin: 3em;
+  font-size: 20px;
   height: 50vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+  margin: var(--margin);
   text-align: center;
 }
 
+.results-container {
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
 .results-summonerName {
-  font-size: 3rem;
+  text-align: center;
 }
 
-.results-winrate {
-  font-size: 5rem;
-}
-
-.results-fineprint {
-  font-size: 1.2rem;
+.results-field-title {
+  color: var(--highlight-color);
 }
 
 /* Back button */
