@@ -9,3 +9,7 @@ WhatsMyWinrate uses the Riot API to display the winrate for League of Legends ac
 #### Make sure to have your own Riot API development key inside an environment variable on the root of /backend in a .env file
 
 The frontend runs on port **3000** and the backend server runs on **3333**
+
+![image](https://imgur.com/UbMMLVR.jpg)
+![image](https://imgur.com/o99lIBs.jpg)
+![image](https://imgur.com/3Vxi8i8.jpg)
