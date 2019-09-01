@@ -10,6 +10,4 @@ WhatsMyWinrate uses the Riot API to display the winrate for League of Legends ac
 
 The frontend runs on port **3000** and the backend server runs on **3333**
 
-![image](https://imgur.com/UbMMLVR.jpg)
-![image](https://imgur.com/o99lIBs.jpg)
-![image](https://imgur.com/3Vxi8i8.jpg)
+![image](link)
