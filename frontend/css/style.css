@@ -109,18 +109,21 @@ body {
 /* Results */
 .results {
   --margin: 3em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 20px;
   height: 50vh;
-  display: grid;
-  grid-gap: 20px;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   margin: var(--margin);
   text-align: center;
 }
 
 .results-container {
-  border-radius: 15px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  height: 50vh;
+  width: 50vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .results-summonerName {
@@ -128,8 +131,23 @@ body {
   text-align: center;
 }
 
+.results-games {
+  text-align: center;
+}
+
 .results-field-title {
-  color: var(--highlight-color);
+  fill: var(--highlight-color);
+}
+
+.percentage-container {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  margin-top: auto;
+}
+
+.percentage {
+  transition: all 2000ms ease-in;
 }
 
 /* Back button */

@@ -26,11 +26,7 @@ export default class Landing extends Component {
     render(){
       return (
         <React.Fragment>
-
-          <h1 className='header'>What's my LoL winrate?</h1>
-
           
-
           <div className='form-container' style={this.state.isSubmitted ? {display: 'none'} : {}}>
             
             <form className='form' name='form' onSubmit={this.handleSubmit}>
