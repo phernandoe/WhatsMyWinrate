@@ -14,7 +14,7 @@ export default class Perecentage extends Component {
 
   updatePercentage = (value) => {
     const total = this.path.getTotalLength();
-    const filled = total * (parseFloat(value)/100);
+    const filled = total * (parseFloat(value.replace('%', ''))/100);
     const none = total - filled;
 
     this.setState({percentageStyle: `${filled} ${none}`});

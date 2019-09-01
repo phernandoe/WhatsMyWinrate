@@ -16,7 +16,7 @@ export default class Results extends Component {
       this.setState({
         summonerName: res.data.data.summonerName,
         totalGames: res.data.data.totalGames,
-        winrate: res.data.data.summonerName === 'Not Found' ? 'N/A' : `${res.data.data.winrate}`
+        winrate: res.data.data.summonerName === 'Not Found' ? 'N/A' : `${res.data.data.winrate}%`
       });
     })
     .catch(err => console.log(err));
@@ -32,7 +32,7 @@ export default class Results extends Component {
 
       </section>
 
-      <h5 className='results-games'>{this.state.totalGames}</h5>
+      <h5 className='results-games'>{this.state.totalGames} total games</h5>
     </>
   )};
 }

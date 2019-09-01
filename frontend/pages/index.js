@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import ReactSVG from 'react-svg';
 import Results from '../components/Results';
 import '../css/style.css';
 
@@ -26,6 +25,8 @@ export default class Landing extends Component {
     render(){
       return (
         <React.Fragment>
+
+          <title>WhatsMyWinrate</title>
           
           <div className='form-container' style={this.state.isSubmitted ? {display: 'none'} : {}}>
             
